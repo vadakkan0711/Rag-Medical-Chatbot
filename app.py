@@ -119,13 +119,22 @@ with open(parkinsons_model_path, 'rb') as file:
     parkinsons_model = pickle.load(file)
 
 
+
+
+
 @app.route("/")
 def index():
     return render_template('index.html')
 
+
+
+
 @app.route("/chat")
 def chatroute():
     return render_template("chat.html")
+
+
+
 
 
 @app.route("/get", methods=["GET", "POST"])
@@ -140,6 +149,9 @@ def chat():
     cleaned_response = clean_response(response)
     print("Response : ",cleaned_response)
     return str(cleaned_response)
+
+
+
 
 @app.route('/diabetes', methods=['GET', 'POST'])
 def diabetes():
@@ -188,6 +200,8 @@ def diabetes():
 
 
 
+
+
 @app.route('/cardiac', methods=['GET', 'POST'])
 def heart():
     result = None  # Initialize result for GET requests
@@ -231,6 +245,8 @@ def heart():
             result = "Invalid input! Please enter numeric values for all fields."
 
     return render_template('cardiac.html', result=result)
+
+
 
 
 @app.route('/parkinsons', methods=['GET', 'POST'])
