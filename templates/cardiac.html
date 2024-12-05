@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-4 text-center title-color">Heart Disease Prediction</h2>
+            <form action="/cardiac" method="POST">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="age" class="form-control mb-3" placeholder="Age" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="sex" class="form-control mb-3" placeholder="Sex (0 = Female, 1 = Male)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="cp" class="form-control mb-3" placeholder="Chest Pain Type" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="trestbps" class="form-control mb-3" placeholder="Resting Blood Pressure" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="chol" class="form-control mb-3" placeholder="Serum Cholesterol (mg/dl)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="fbs" class="form-control mb-3" placeholder="Fasting Blood Sugar (> 120 mg/dl)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="restecg" class="form-control mb-3" placeholder="Resting ECG Results" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="thalach" class="form-control mb-3" placeholder="Max Heart Rate Achieved" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="exang" class="form-control mb-3" placeholder="Exercise Induced Angina" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="oldpeak" class="form-control mb-3" placeholder="ST Depression Induced by Exercise" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="slope" class="form-control mb-3" placeholder="Slope of Peak Exercise ST Segment" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="ca" class="form-control mb-3" placeholder="Number of Major Vessels Colored by Fluoroscopy" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="thal" class="form-control mb-3" placeholder="Thalassemia (0 = Normal, 1 = Fixed Defect, 2 = Reversible Defect)" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-main btn-round-full">Predict</button>
+            </form>
+
+            <!-- Display the prediction result below the form -->
+            {% if result %}
+            <div class="result mt-4 text-center">
+                <p class="alert alert-info">{{ result }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>

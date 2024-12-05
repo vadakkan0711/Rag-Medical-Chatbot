@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-4 text-center title-color">Diabetes Prediction</h2>
+            <form action="/diabetes" method="POST">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="Pregnancies" class="form-control mb-3" placeholder="Number of Pregnancies" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="Glucose" class="form-control mb-3" placeholder="Glucose Level" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="BloodPressure" class="form-control mb-3" placeholder="Blood Pressure" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="SkinThickness" class="form-control mb-3" placeholder="Skin Thickness" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="Insulin" class="form-control mb-3" placeholder="Insulin Level" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="BMI" class="form-control mb-3" placeholder="BMI" required>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" name="DiabetesPedigreeFunction" class="form-control mb-3" placeholder="Diabetes Pedigree Function" required>
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="text" name="Age" class="form-control mb-3" placeholder="Age" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-main btn-round-full">Predict</button>
+            </form>
+
+            <!-- Display the prediction result below the form -->
+            {% if result %}
+            <div class="result mt-4 text-center">
+                <p class="alert alert-info">{{ result }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>

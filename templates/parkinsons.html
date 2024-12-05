@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Parkinson's Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-4 text-center title-color">Parkinson's Disease Prediction</h2>
+            <form action="/parkinsons" method="POST">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="text" name="fo" class="form-control mb-3" placeholder="MDVP:Fo(Hz)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="fhi" class="form-control mb-3" placeholder="MDVP:Fhi(Hz)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="flo" class="form-control mb-3" placeholder="MDVP:Flo(Hz)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="Jitter_percent" class="form-control mb-3" placeholder="MDVP:Jitter(%)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="Jitter_Abs" class="form-control mb-3" placeholder="MDVP:Jitter(Abs)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="RAP" class="form-control mb-3" placeholder="MDVP:RAP" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="PPQ" class="form-control mb-3" placeholder="MDVP:PPQ" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="DDP" class="form-control mb-3" placeholder="Jitter:DDP" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="Shimmer" class="form-control mb-3" placeholder="MDVP:Shimmer" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="Shimmer_dB" class="form-control mb-3" placeholder="MDVP:Shimmer(dB)" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="APQ3" class="form-control mb-3" placeholder="Shimmer:APQ3" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="APQ5" class="form-control mb-3" placeholder="Shimmer:APQ5" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="APQ" class="form-control mb-3" placeholder="MDVP:APQ" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="DDA" class="form-control mb-3" placeholder="Shimmer:DDA" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="NHR" class="form-control mb-3" placeholder="NHR" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="HNR" class="form-control mb-3" placeholder="HNR" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="RPDE" class="form-control mb-3" placeholder="RPDE" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="DFA" class="form-control mb-3" placeholder="DFA" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="spread1" class="form-control mb-3" placeholder="Spread1" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="spread2" class="form-control mb-3" placeholder="Spread2" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="D2" class="form-control mb-3" placeholder="D2" required>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="text" name="PPE" class="form-control mb-3" placeholder="PPE" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-main btn-round-full">Predict</button>
+            </form>
+
+            <!-- Display the prediction result below the form -->
+            {% if result %}
+            <div class="result mt-4 text-center">
+                <p class="alert alert-info">{{ result }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>
